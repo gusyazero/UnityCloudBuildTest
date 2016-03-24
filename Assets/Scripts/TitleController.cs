@@ -11,11 +11,14 @@ public class TitleController : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         gameData = GameData.Instance;
-//        gameData.highScore = 10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (gameData == null)
+        {
+            gameData = GameData.Instance;
+        }
         scoreText.text = gameData.highScore.ToString();
 
         // 開始処理
